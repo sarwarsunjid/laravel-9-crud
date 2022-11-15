@@ -13,7 +13,7 @@
                     <h2>Laravel 9 CRUD Example Tutorial</h2>
                 </div>
                 <div class="pull-right mb-2">
-                    <a class="btn btn-success" href="{{ route('students.create') }}"> Create Student</a>
+                    <a class="btn btn-success" href="{{ route('student.create') }}"> Create Student</a>
                 </div>
             </div>
         </div>

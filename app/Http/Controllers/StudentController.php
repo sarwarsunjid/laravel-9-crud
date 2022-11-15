@@ -37,7 +37,7 @@ class StudentController extends Controller
     */
     public function store(StudentStoreRequest $request)
     {
-        
+
         Student::create($request->post());
 
         return redirect()->route('students.index')->with('success','Student has been created successfully.');
@@ -74,7 +74,7 @@ class StudentController extends Controller
     */
     public function update(StudentUpdateRequest $request, Student $students)
     {
-        
+
         $students->fill($request->post())->save();
 
         return redirect()->route('students.index')->with('success','Student Has Been updated successfully');
