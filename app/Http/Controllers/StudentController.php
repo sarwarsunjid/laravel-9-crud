@@ -40,7 +40,7 @@ class StudentController extends Controller
 
         Student::create($request->post());
 
-        return redirect()->route('students.index')->with('success','Student has been created successfully.');
+        return redirect()->route('student.index')->with('success','Student has been created successfully.');
     }
 
     /**
@@ -60,8 +60,9 @@ class StudentController extends Controller
     * @param  \App\Student  $students
     * @return \Illuminate\Http\Response
     */
-    public function edit(Student $students)
+    public function edit(Student $students ,$id)
     {
+        $students = Student::find($id);
         return view('students.edit',compact('students'));
     }
 
@@ -77,7 +78,7 @@ class StudentController extends Controller
 
         $students->fill($request->post())->save();
 
-        return redirect()->route('students.index')->with('success','Student Has Been updated successfully');
+        return redirect()->route('student.index')->with('success','Student Has Been updated successfully');
     }
 
     /**

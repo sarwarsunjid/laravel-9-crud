@@ -10,11 +10,13 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>Laravel 9 CRUD Example Tutorial</h2>
+                    <h2>Laravel 9 CRUD Example</h2>
                 </div>
+                <br>
                 <div class="pull-right mb-2">
                     <a class="btn btn-success" href="{{ route('student.create') }}"> Create Student</a>
                 </div>
+                <br>
             </div>
         </div>
         @if ($message = Session::get('success'))
@@ -41,7 +43,7 @@
                         <td>{{ $student->address }}</td>
                         <td>
                             <form action="" method="Post">
-                                <a class="btn btn-primary" href="">Edit</a>
+                                <a class="btn btn-primary" href="{{ route('student.edit',$student->id) }}">Edit</a>
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
