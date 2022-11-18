@@ -24,4 +24,11 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('/student', StudentController::class);
+
+//
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::resource('/student', StudentController::class);
+});
+
+
+
